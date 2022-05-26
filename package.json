@@ -1,0 +1,30 @@
+{
+    "name": "jiraaf_coding_challenge",
+    "version": "1.0.0",
+    "description": "The Money Lending Challenge",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon ./src/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Surajxxx/Jirraf_Coding_Challenge.git"
+    },
+    "author": "Suraj Dubey",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Surajxxx/Jirraf_Coding_Challenge/issues"
+    },
+    "homepage": "https://github.com/Surajxxx/Jirraf_Coding_Challenge#readme",
+    "dependencies": {
+        "body-parser": "^1.20.0",
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1",
+        "moment": "^2.29.3",
+        "mongoose": "^6.3.4"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.16"
+    }
+}
