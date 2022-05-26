@@ -30,7 +30,7 @@ const loanRequest = async function(req, res) {
 
         // city must be from tier1 and tier2
         if (!allCities.includes(City)) {
-            return res.status(400).send({ status: false, message: "Sorry, we do not provide service to this city" })
+            return res.status(400).send({ status: true, message: "Sorry, we do not provide service to this city" })
         }
 
         if (!Validator.isValidField(DOB)) {
@@ -52,7 +52,7 @@ const loanRequest = async function(req, res) {
 
         // if age is less than 18 or more than 59 then rejecting loan
         if (age < 18 || age > 59) {
-            return res.status(200).send({ status: true, message: `Loan-Rejected : User age is ${age}, does not fulfilling the criteria` })
+            return res.status(400).send({ status: false, message: `Loan-Rejected : User age is ${age}, does not fulfilling the criteria` })
         }
 
         if (!Validator.isValidCreditScore(creditScore)) {
@@ -71,7 +71,7 @@ const loanRequest = async function(req, res) {
         // If city is tier1 and creditScore is below 300 then rejecting loan else calculating ROI
         if (tier1Cities.includes(City)) {
             if (creditScore < 300) {
-                return res.status(200).send({ status: true, message: `Loan-Rejected : credit score- ${creditScore}, does not fulfilling the criteria` })
+                return res.status(400).send({ status: false, message: `Loan-Rejected : credit score- ${creditScore}, does not fulfilling the criteria` })
             } else if (creditScore <= 500 && creditScore >= 300) {
                 rateOfInterest = 14
             } else if (creditScore <= 800 && creditScore > 500) {
